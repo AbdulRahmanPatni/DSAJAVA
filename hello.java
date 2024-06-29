@@ -1,5 +1,15 @@
 public class hello{
     public static void main(String[] args){
-        System.out.print("hello World");
+
+    for (int i=0;i<5;i++){
+        for(int i=0;i<i;i++){
+          System.out.println("*")
+        }
+        System.out.println();
+    }
+        
+
+
+
     }
 }
