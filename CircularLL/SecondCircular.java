@@ -38,22 +38,13 @@ public class SecondCircular {
 	
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
 	public static void main(String[] args) {
 		SecondCircular list2=new SecondCircular();
 		list2.insertFirst(40);
 		list2.insertFirst(30);
 		list2.insertFirst(20);
 		list2.insertFirst(10);
-		System.out.println(first.Data);
-		System.out.println(last.next.Data);
+	
 		list2.print();
 	}
 
