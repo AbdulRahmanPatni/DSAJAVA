@@ -4,7 +4,6 @@ public class CircularLL {
 
     private  static Node last;
 
-
     CircularLL(){
         this.first=null;
         this.last=null;
@@ -16,17 +15,20 @@ public class CircularLL {
 
     public void insertFirst(int data){
         Node newnode=new Node(data);
-        if(first==null){
+        if(isEmpty()){
             last=newnode;
         }
         newnode.next=first;
         first=newnode;
-        last.next=newnode;
     }
 
 
 
     public void print(){
+        if(isEmpty()){
+            System.out.println("Empty List");
+            return;
+        }
         Node temp=first;
 
         do{
@@ -37,14 +39,44 @@ public class CircularLL {
 
     }
 
+    public void insertLast(int data) {
+        Node newnode = new Node(data);
+
+        if (isEmpty()) {
+            first = newnode;
+        } else {
+            last.next = newnode;
+            newnode.next = first;
+            last = newnode;
+        }
+    }
+
+    public int deleteFirst(){
+        if(isEmpty()){
+            return -1;
+        }
+        int temp=first.Data;
+        if(first.next==null){
+            last=null;
+        }
+        first=first.next;
+        return  temp;
+
+        }
+
+
+
+
+
     public static void main(String[] args) {
         CircularLL list=new CircularLL();
+        list.insertLast(40);
         list.insertFirst(30);
         list.insertFirst(20);
         list.insertFirst(10);
-
-        System.out.println(first.Data);
-        System.out.println(last.Data);
+        list.deleteFirst();
         list.print();
+
     }
-}
+    }
+
